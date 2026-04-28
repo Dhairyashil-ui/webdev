@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quiz</title>
+  <style>
+    body { font-family: Arial; }
+    .question { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>Simple Quiz</h2>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<div class="question">
+1. 2 + 2 = ?
+<br>
+<input type="radio" name="q1" value="3">3
+<input type="radio" name="q1" value="4">4
+<input type="radio" name="q1" value="5">5
+</div>
+
+<!-- Q2 -->
+<div class="question">
+2. Capital of India?
+<br>
+<input type="radio" name="q2" value="Delhi">Delhi
+<input type="radio" name="q2" value="Mumbai">Mumbai
+<input type="radio" name="q2" value="Pune">Pune
+</div>
+
+<!-- Q3 -->
+<div class="question">
+3. 5 × 2 = ?
+<br>
+<input type="radio" name="q3" value="10">10
+<input type="radio" name="q3" value="8">8
+<input type="radio" name="q3" value="12">12
+</div>
+
+<!-- Q4 -->
+<div class="question">
+4. HTML stands for?
+<br>
+<input type="radio" name="q4" value="Hyper Text Markup Language">Hyper Text Markup Language
+<input type="radio" name="q4" value="High Text Machine Language">High Text Machine Language
+<input type="radio" name="q4" value="Hyper Tool Multi Language">Hyper Tool Multi Language
+</div>
+
+<!-- Q5 -->
+<div class="question">
+5. 10 / 2 = ?
+<br>
+<input type="radio" name="q5" value="5">5
+<input type="radio" name="q5" value="2">2
+<input type="radio" name="q5" value="8">8
+</div>
+
+<!-- Q6 -->
+<div class="question">
+6. CSS is used for?
+<br>
+<input type="radio" name="q6" value="Styling">Styling
+<input type="radio" name="q6" value="Programming">Programming
+<input type="radio" name="q6" value="Database">Database
+</div>
+
+<!-- Q7 -->
+<div class="question">
+7. 7 + 3 = ?
+<br>
+<input type="radio" name="q7" value="10">10
+<input type="radio" name="q7" value="9">9
+<input type="radio" name="q7" value="11">11
+</div>
+
+<!-- Q8 -->
+<div class="question">
+8. JavaScript is used for?
+<br>
+<input type="radio" name="q8" value="Interaction">Interaction
+<input type="radio" name="q8" value="Styling">Styling
+<input type="radio" name="q8" value="Structure">Structure
+</div>
+
+<!-- Q9 -->
+<div class="question">
+9. 9 - 4 = ?
+<br>
+<input type="radio" name="q9" value="5">5
+<input type="radio" name="q9" value="6">6
+<input type="radio" name="q9" value="4">4
+</div>
+
+<!-- Q10 -->
+<div class="question">
+10. PHP is used for?
+<br>
+<input type="radio" name="q10" value="Server">Server
+<input type="radio" name="q10" value="Design">Design
+<input type="radio" name="q10" value="Game">Game
+</div>
+
+<br>
+<button type="button" onclick="checkScore()">Submit</button>
+
+</form>
+
+<h3 id="result"></h3>
+
+<script>
+function checkScore() {
+
+  let score = 0;
+
+  // Correct answers
+  let answers = {
+    q1:"4", q2:"Delhi", q3:"10", q4:"Hyper Text Markup Language",
+    q5:"5", q6:"Styling", q7:"10", q8:"Interaction",
+    q9:"5", q10:"Server"
+  };
+
+  // Check answers
+  for (let q in answers) {
+    let selected = document.querySelector('input[name="'+q+'"]:checked');
+    if (selected && selected.value === answers[q]) {
+      score++;
+    }
+  }
+
+  document.getElementById("result").innerHTML =
+    "Your Score: " + score + " / 10";
+}
+</script>
+
+</body>
+</html>

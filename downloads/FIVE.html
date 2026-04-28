@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+```
+<style>
+    body {
+        font-family: Arial;
+        background-color: #f2f2f2;
+    }
+
+    .form-box {
+        width: 300px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0 10px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        background-color: green;
+        color: white;
+        border: none;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+```
+<h2>Student Registration</h2>
+
+<form>
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male<br>
+    <input type="radio" name="gender" value="Female"> Female<br><br>
+
+    <!-- Date of Birth -->
+    <label>Date of Birth:</label>
+    <input type="date" name="dob" required>
+
+    <!-- Submit -->
+    <input type="submit" value="Register">
+
+</form>
+```
+
+</div>
+
+</body>
+</html>

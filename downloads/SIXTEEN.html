@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function area(shape) {
+  let result;
+
+  switch(shape) {
+
+    case "rectangle":
+      let l = prompt("Enter length:");
+      let w = prompt("Enter width:");
+      result = l * w;
+      break;
+
+    case "triangle":
+      let b = prompt("Enter base:");
+      let h = prompt("Enter height:");
+      result = 0.5 * b * h;
+      break;
+
+    case "circle":
+      let r = prompt("Enter radius:");
+      result = 3.14 * r * r;
+      break;
+
+    default:
+      result = "Invalid Shape";
+  }
+
+  return result;
+}
+
+// user input
+let shape = prompt("Enter shape (rectangle/triangle/circle):");
+
+let output = area(shape);
+
+document.write("Area: " + output);
+</script>
+
+</body>
+</html>

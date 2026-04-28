@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+  <h2>Welcome to Dashboard</h2>
+
+  <?php
+    // Set timezone (important)
+    date_default_timezone_set("Asia/Kolkata");
+
+    // Welcome message
+    echo "<h3>Hello User!</h3>";
+
+    // Display current date
+    echo "<p>Today's Date: " . date("d-m-Y") . "</p>";
+
+    // Display current time
+    echo "<p>Current Time: " . date("h:i:s A") . "</p>";
+  ?>
+
+</body>
+</html>

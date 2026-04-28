@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic DOM Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+    }
+    ul {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Welcome!</h1>
+
+  <p id="description">Click the button to change this text.</p>
+
+  <button onclick="changeText()">Change Text</button>
+
+  <hr>
+
+  <h2>Add Items to a List</h2>
+  <input type="text" id="itemInput" placeholder="Enter an item">
+  <button onclick="addItem()">Add Item</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    // Change text dynamically
+    function changeText() {
+      const desc = document.getElementById("description");
+      desc.textContent = "The text has been changed using JavaScript!";
+    }
+
+    // Add list item dynamically
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const value = input.value.trim();
+
+      if (value === "") {
+        alert("Please enter a value!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = value;
+
+      document.getElementById("itemList").appendChild(li);
+
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>

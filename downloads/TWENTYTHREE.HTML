@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Marks Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+    }
+
+    .container {
+      width: 300px;
+      margin: 80px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      text-align: center;
+    }
+
+    input {
+      width: 90%;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Marks Calculator</h2>
+
+  Name: <input type="text" id="name"><br>
+
+  M1: <input type="number" id="m1"><br>
+  M2: <input type="number" id="m2"><br>
+  M3: <input type="number" id="m3"><br>
+  M4: <input type="number" id="m4"><br>
+  M5: <input type="number" id="m5"><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <h3 id="result"></h3>
+</div>
+
+<script>
+function calculate() {
+
+  let name = document.getElementById("name").value;
+
+  let m1 = Number(document.getElementById("m1").value);
+  let m2 = Number(document.getElementById("m2").value);
+  let m3 = Number(document.getElementById("m3").value);
+  let m4 = Number(document.getElementById("m4").value);
+  let m5 = Number(document.getElementById("m5").value);
+
+  let total = m1 + m2 + m3 + m4 + m5;
+  let percent = total / 5;
+
+  let grade;
+
+  if (percent >= 75) grade = "A";
+  else if (percent >= 60) grade = "B";
+  else if (percent >= 50) grade = "C";
+  else grade = "Fail";
+
+  document.getElementById("result").innerHTML =
+    "Name: " + name +
+    "<br>Total: " + total +
+    "<br>Percentage: " + percent + "%" +
+    "<br>Grade: " + grade;
+}
+</script>
+
+</body>
+</html>

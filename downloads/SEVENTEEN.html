@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
+</head>
+<body>
+
+<h2>Student Form</h2>
+
+<form method="POST">
+  Name: <input type="text" name="name"><br><br>
+
+  Marks 1: <input type="number" name="m1"><br><br>
+  Marks 2: <input type="number" name="m2"><br><br>
+  Marks 3: <input type="number" name="m3"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // Get name
+  $name = $_POST['name'];
+
+  // String functions
+  echo "<h3>Name Processing:</h3>";
+  echo "Original Name: $name <br>";
+  echo "Uppercase: " . strtoupper($name) . "<br>";
+  echo "Length: " . strlen($name) . "<br><br>";
+
+  // Store marks in array
+  $marks = array($_POST['m1'], $_POST['m2'], $_POST['m3']);
+
+  // Calculate total and average
+  $total = array_sum($marks);
+  $count = count($marks);
+  $average = $total / $count;
+
+  echo "<h3>Marks Details:</h3>";
+  echo "Total Marks: $total <br>";
+  echo "Average Marks: $average <br>";
+}
+?>
+
+</body>
+</html>

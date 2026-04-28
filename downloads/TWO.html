@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Simple Survey Form</title>
+
+```
+<style>
+    body {
+        font-family: Arial;
+        background-color: #ee0707;
+    }
+
+    .form-box {
+        width: 350px;
+        margin: auto;
+        background: rgb(173, 242, 12);
+        padding: 20px;
+        border: 1px solid #620ce2;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0 10px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+
+<h2>Survey Form</h2>
+
+<form>
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male"> Male<br>
+    <input type="radio" name="gender" value="Female"> Female<br><br>
+
+    <!-- Interests -->
+    <label>Interests:</label><br>
+    <input type="checkbox" name="interest" value="Sports"> Sports<br>
+    <input type="checkbox" name="interest" value="Music"> Music<br>
+    <input type="checkbox" name="interest" value="Technology"> Technology<br><br>
+
+    <!-- Submit -->
+    <input type="submit" value="Submit">
+
+</form>
+
+
+</div>
+
+</body>
+</html>

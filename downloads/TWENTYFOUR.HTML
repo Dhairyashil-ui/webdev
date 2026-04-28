@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body>
+
+<h2>Feedback Form</h2>
+
+<form method="POST">
+  Name: <input type="text" name="name"><br><br>
+  Feedback: <textarea name="feedback"></textarea><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $name = $_POST['name'];
+  $feedback = $_POST['feedback'];
+
+  // Set timezone
+  date_default_timezone_set("Asia/Kolkata");
+
+  echo "<h3>Feedback Submitted:</h3>";
+  echo "Name: $name <br>";
+  echo "Feedback: $feedback <br>";
+
+  // Display date & time
+  echo "Date: " . date("d-m-Y") . "<br>";
+  echo "Time: " . date("h:i:s A") . "<br>";
+}
+?>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+  <style>
+    body { font-family: Arial; }
+    input { display: block; margin: 5px; }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+
+<h2>Student Registration</h2>
+
+<form onsubmit="return validate()">
+  Name: <input type="text" id="name">
+  Email: <input type="text" id="email">
+  Password: <input type="password" id="pass">
+  Confirm Password: <input type="password" id="cpass">
+  Phone: <input type="text" id="phone">
+
+  <button type="submit">Register</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+function validate() {
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("pass").value;
+  let cpass = document.getElementById("cpass").value;
+  let phone = document.getElementById("phone").value;
+
+  let msg = document.getElementById("msg");
+
+  if (name=="" || email=="" || pass=="" || cpass=="" || phone=="") {
+    msg.innerHTML = "All fields are required";
+    msg.className = "error";
+    return false;
+  }
+
+  if (pass != cpass) {
+    msg.innerHTML = "Passwords do not match";
+    msg.className = "error";
+    return false;
+  }
+
+  if (phone.length != 10) {
+    msg.innerHTML = "Invalid phone number";
+    msg.className = "error";
+    return false;
+  }
+
+  msg.innerHTML = "Registration Successful!";
+  msg.className = "success";
+
+  return false;
+}
+</script>
+
+</body>
+</html>
